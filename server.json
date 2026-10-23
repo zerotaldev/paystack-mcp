@@ -1,0 +1,51 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.zerotaldev/paystack",
+  "title": "Paystack",
+  "description": "Create and verify Paystack payments across Africa. Test mode enforced by key prefix.",
+  "version": "0.1.0",
+  "websiteUrl": "https://github.com/zerotaldev/paystack-mcp",
+  "repository": {
+    "url": "https://github.com/zerotaldev/paystack-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "paystack-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "PAYSTACK_SECRET_KEY",
+          "description": "Paystack secret key. The sk_test_ or sk_live_ prefix sets the mode.",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "PAYSTACK_ALLOW_LIVE",
+          "description": "Required only with an sk_live_ key. Must be 'i-understand-this-moves-real-money'.",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "PAYSTACK_CURRENCY",
+          "description": "Default currency for new transactions",
+          "isRequired": false,
+          "isSecret": false,
+          "default": "ZAR",
+          "choices": ["NGN", "ZAR", "GHS", "KES", "USD", "XOF"]
+        },
+        {
+          "name": "PAYSTACK_MAX_AMOUNT",
+          "description": "Ceiling on a single transaction, in major units",
+          "isRequired": false,
+          "isSecret": false,
+          "default": "1000"
+        }
+      ]
+    }
+  ]
+}
