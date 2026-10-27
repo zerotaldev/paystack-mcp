@@ -1,5 +1,7 @@
 # paystack-mcp
 
+[![test](https://github.com/zerotaldev/paystack-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/zerotaldev/paystack-mcp/actions/workflows/test.yml)
+
 An MCP server for [Paystack](https://paystack.com), the payments API covering
 Nigeria, Ghana, South Africa, Kenya and Côte d'Ivoire. It lets an AI assistant
 create checkout links, verify payments and read transaction history.
